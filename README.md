@@ -75,7 +75,7 @@ This project is a Node.js-based application that is a multi-level referral syste
   - **Request Body:**
     ```json
     {
-      "name": "Vidhi",
+      "name": "USER",
       "referredBy": "<userId>" (optional)
     }
     ```
