@@ -13,9 +13,9 @@ const dbUrl = process.env.DATABASE_HOST + "/" + process.env.DATABASE_NAME;
 app.use(bodyParser.json());
 
 // Routes
-app.use("/users", require("./routes/user.routes"));
-app.use("/transactions", require("./routes/transaction.routes"));
-app.use("/earnings", require("./routes/earning.routes"));
+app.use("/api/users", require("./routes/user.routes"));
+app.use("/api/transactions", require("./routes/transaction.routes"));
+app.use("/api/earnings", require("./routes/earning.routes"));
 
 // Connect to MongoDB
 
@@ -50,9 +50,9 @@ function notifyUserAboutEarnings(userId, earnings) {
 }
 
 // Start the server
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(
-    `Server running at ${process.env.APP_SCHEMA}://${process.env.APP_HOST}:${port}${process.env.APP_ROUTE_PREFIX}`
+    `Server running at ${process.env.APP_SCHEMA}://${process.env.APP_HOST}:${port}`
   );
 });
 

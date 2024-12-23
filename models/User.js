@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  id: { type: mongoose.Schema.Types.ObjectId, default: null },
+  id: { type: Number, default: null },
   name: { type: String, required: true },
   referredBy: {
     type: mongoose.Schema.Types.ObjectId,

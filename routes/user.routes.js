@@ -18,8 +18,10 @@ router.post("/", async (req, res) => {
       parent.directReferrals++;
       await parent.save();
     }
+    let id = await User.countDocuments();
+    id = id + 1;
 
-    const user = await User.create({ name, referredBy });
+    const user = await User.create({ id, name, referredBy });
     res.status(201).json(user);
   } catch (error) {
     res.status(500).json({ error: error.message });
